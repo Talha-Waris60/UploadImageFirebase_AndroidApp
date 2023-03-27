@@ -69,7 +69,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        binding.showUploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ShowImagesActivity.class));
+            }
+        });
     }
+
 
     private void uploadImage() {
         StorageReference storageReference = FirebaseStorage.getInstance().getReference("images/" + fileName + ".jpg");
